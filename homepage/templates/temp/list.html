@@ -2,11 +2,13 @@
 {% block content %}
 
 <div class="container my-3">
+
     <h2 style = "text-align:center"> <!페이지 제목 가운데 정렬 설정>
         온도 값 리스트
     </h2>     <!h2 == 제목 크기 설정>
 
     <table class = "table"> 
+
         <thead>
         <tr class ="thead-dark"> 
             <th width=30%>온도값</th> 
@@ -17,14 +19,17 @@
         <tbody>
         {% for item in list%}
     
-        <tr style="background-color:Cornsilk"> 
+        <tr> 
             <td width=30%>{{item[0]}}</td>
             <td width=30%>{{item[1]}}</td>          
         </tr>
-    
         {% endfor %}
         </tbody>
     </table> 
+    <div class="btn-group" role="group" aria-label="Basic example">   
+        <button class="btn btn-outline-dark" onclick="window.location.href='/'">Return to Home</button>
+        <button class="btn btn-outline-dark" onclick="window.location.href='/delete'">Delete All</button>
+    </div>
 </div>
 
 {% endblock %}  

@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container my-3">
+    <h2 style = "text-align:center"> <!페이지 제목 가운데 정렬 설정>
+        Welcome to monitoring system
+    </h2>     <!h2 == 제목 크기 설정>
+</div>
 
+<div class = "container my-2">
     <center>
-    <button onclick="window.location.href='list'">Start Monitoring</button>
+    <button class="btn btn-outline-dark" onclick="window.location.href='list/1'">Start Monitoring</button>
     </center>
-
+</div>
 {% endblock %}  

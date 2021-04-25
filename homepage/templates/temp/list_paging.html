@@ -18,7 +18,7 @@
         <tbody>
         {% for item in list%}
     
-        <tr style="background-color:Cornsilk"> 
+        <tr> 
             <td width=30%>{{item[0]}}</td>
             <td width=30%>{{item[1]}}</td>        
         </tr>
@@ -31,6 +31,10 @@
                 <td><a href =  "/list/{{i+1}}">[{{i+1}}]</a></td>
             {% endfor %}
     </ul>
+    <div class="btn-group" role="group" aria-label="Basic example">   
+        <button class="btn btn-outline-dark" onclick="window.location.href='/'">Return to Home</button>
+        <button class="btn btn-outline-dark" onclick="window.location.href='/delete'">Delete All</button>
+    </div>
 </div>
 
 {% endblock %}  
