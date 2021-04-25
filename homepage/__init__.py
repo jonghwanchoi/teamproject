@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "welcome"
+    return render_template('temp/home.html')
 
 @app.route('/list')
 def list_all():
