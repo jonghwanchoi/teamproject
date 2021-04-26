@@ -10,7 +10,9 @@
     <table class = "table"> 
         <thead>
         <tr class ="thead-dark"> 
-            <th width=30%>온도값</th> 
+            <th width=10%>Index</th>
+            <th width=30%>온도</th>
+            <th width=30%>습도</th>
             <th width=30%>입력시간</th>     
         </tr>
         </thead>
@@ -19,8 +21,10 @@
         {% for item in list%}
     
         <tr> 
-            <td width=30%>{{item[0]}}</td>
-            <td width=30%>{{item[1]}}</td>        
+            <td width=10%>{{item[0]}}</td>
+            <td width=30%>{{item[1]}}</td>
+            <td width=30%>{{item[2]}}</td>
+            <td width=30%>{{item[3]}}</td>        
         </tr>
     
         {% endfor %}
@@ -34,6 +38,7 @@
     <div class="btn-group" role="group" aria-label="Basic example">   
         <button class="btn btn-outline-dark" onclick="window.location.href='/'">Return to Home</button>
         <button class="btn btn-outline-dark" onclick="window.location.href='/delete'">Delete All</button>
+        <button class="btn btn-outline-dark" onClick="window.location.reload()">새로 고침</button>
     </div>
 </div>
 
