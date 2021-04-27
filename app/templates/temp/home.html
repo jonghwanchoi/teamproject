@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+    <h1 style = "text-align:center"> 
+    <!--페이지 제목 가운데 정렬 설정-->
+        Welcome to monitoring system
+    </h1> 
+</div>
+
+<div class="container my-3">
+        <center>
+        <form action = "/start" method="POST">
+            <label for="Port">Port</label>
+            <select class="u-full-width" name= "Port">
+                <option value = "COM3">COM3</option>
+                <option value = "COM5">COM5</option>
+            </select>
+
+            <label for="Baud_Rate">Baud Rate</label>
+            <select class="u-full-width" name= "Baud_Rate">
+                <option value = "9600">9600</option>
+                <option value = "115200">115200</option>
+            </select>
+            
+            <div class = "container my-2">
+                <center>
+                <input class="btn btn-outline-dark" type ="submit" value = "Start Sending" id="send_btn"/>
+                </center>
+            </div>
+            {{sum}}
+        </form>       
+        </center>
+</div>
+<center>
+<button class="btn btn-outline-dark" onclick="window.location.href='test'">Start Monitoring</button>
+</center>
+
+{% endblock %}  

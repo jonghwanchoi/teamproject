@@ -1,5 +1,6 @@
 import sqlite3
 import time
+import serial
 from datetime import datetime
 # "C:/projects/teamproject/arduinoDB.db"
 # "C:/projects/teamproject/testDB.db"
@@ -49,10 +50,12 @@ class select_DB:
         con = sqlite3.connect(self.dbPath)
         cur = con.cursor()
         cur.execute("DELETE FROM " + self.table_name)
-        cur.execute("SELECT * FROM " + self.table_name)
-        rows = cur.fetchall() # 데이터 전체 읽어오기
         con.commit()
         con.close()
+    
+    def stop(self):
+        serial.Serial('COM5','9600').close()
+        sqlite3.connect("C:/projects/teamproject/testDB.db").close()
 
-        return rows
+    
 
