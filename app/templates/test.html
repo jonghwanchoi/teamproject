@@ -3,17 +3,17 @@
 
 <div class="container my-3">
 
-    <h2 style = "text-align:center"> <!페이지 제목 가운데 정렬 설정>
+    <h2 style = "text-align:center"> 
         온,습도 CHECK!
-    </h2>     <!h2 == 제목 크기 설정>
+    </h2>     
 
     <table class = "table"> 
 
         <thead>
         <tr class ="thead-dark">
             <th width=10%>Index</th> 
-            <th width=30%>온도값</th>
-            <th width=30%>습도값</th>  
+            <th width=30%>온도</th>
+            <th width=30%>습도</th>  
             <th width=30%>입력시간</th>     
         </tr>
         </thead>
@@ -34,22 +34,20 @@
     <div class="btn-group" role="group" aria-label="Basic example">   
         <button class="btn btn-outline-dark" onclick="window.location.href='/'">Return to Home</button>
         <button class="btn btn-outline-dark" onclick="window.location.href='/list/1'">Go to Paging</button>
-        <button class="btn btn-outline-dark" onClick="window.location.reload()">새로 고침</button>
-        <button class="btn btn-outline-dark" onclick="start()">start</button>
-        <button class="btn btn-outline-dark" onclick="stop()">stop</button>
         <button class="btn btn-outline-dark" onclick="deleteAll()">Delete All</button>
+        <button class="btn btn-outline-dark" onClick="window.location.reload()">새로 고침</button>
+        <input class="btn btn-outline-dark" onclick="change()" type="button" value="Connect" id="myButton1"></input>
     </div>
     <div id="result">
     </div>
 </div>
 <script>
-        function stop(){
-            fetch("/stop")
-            .then(response=> { console.log(response); return response.text()})    
-        }
-        function start(){
-            fetch("/start")
-            .then(response=> {console.log(response); return response.text()})
+        function change(){
+            fetch("/serial")
+            .then(response=> { console.log(response); return response.text()})
+            var elem = document.getElementById("myButton1");
+            if (elem.value=="Disconnect") elem.value = "Connect";
+            else elem.value = "Disconnect";    
         }
         function deleteAll(){
             fetch("/delete")

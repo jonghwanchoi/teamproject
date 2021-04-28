@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'homebase.html' %}
 {% block content %}
 <div class="container my-3">
     <h1 style = "text-align:center"> 
@@ -7,9 +7,15 @@
     </h1> 
 </div>
 
+<center>
+<a href = "http://www.sdistory.net/smartfarm/">
+<img src= "https://i0.wp.com/www.sdistory.net/wp-content/uploads/2016/04/%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8C%9C_2_blog.jpg?w=740" height = "370" alt = "Smarfarm">
+</a>
+</center>
+
 <div class="container my-3">
         <center>
-        <form action = "/start" method="POST">
+        <form action = "/connect" method="POST">
             <label for="Port">Port</label>
             <select class="u-full-width" name= "Port">
                 <option value = "COM3">COM3</option>
@@ -24,15 +30,15 @@
             
             <div class = "container my-2">
                 <center>
-                <input class="btn btn-outline-dark" type ="submit" value = "Start Sending" id="send_btn"/>
+                <input class="btn btn-outline-dark" type ="submit" value = "Serial Setting"/>
                 </center>
             </div>
             {{sum}}
         </form>       
         </center>
+        <center>
+            <button class="btn btn-outline-dark" onclick="window.location.href='test'">Start Monitoring</button>
+        </center>
 </div>
-<center>
-<button class="btn btn-outline-dark" onclick="window.location.href='test'">Start Monitoring</button>
-</center>
 
 {% endblock %}  
